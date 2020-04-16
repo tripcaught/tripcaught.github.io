@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 32</title>
+<script type="text/javascript">
+var kysymykset = [ ["inta š ʕaddilt?"], ["maa txassaṛ ši?"], [""], ["alħamdu lillaah?"], ["yarħamaka ḷḷaah?"], ["aamiin?"], ["ʕissak laa tṭiiħ?"], ["mabruuk?"], ["ižaazak aḷḷaah xayran?"], ["huun viih ħadd?"], ["maanaḷḷa, tfaḍḍal?"], ["nziidlak?"], ["kaaviini?"] ];
+var altkysymykset = [ ["انتا ش عدّلت؟"], ["ما اتخسّر شي؟"], [""], ["الحمد لله؟"], ["يرحمك الله؟"], ["آمين؟"], ["عسّك لا اتطيح؟"], ["مبروك؟"], ["يجازك الله خيرًا؟"], ["هون فيه حدّ؟"], ["مانلّا، اتفضّل؟"], ["انزيدلك؟"], ["كافيني؟"] ];
+var sanat = [ "inta š ʕaddilt?", "maa txassaṛ ši", "", "alħamdu lillaah", "yarħamaka ḷḷaah", "aamiin", "ʕissak laa tṭiiħ", "mabruuk", "ižaazak aḷḷaah xayran", "huun viih ħadd?", "maanaḷḷa, tfaḍḍal", "nziidlak?", "kaaviini" ];
+var altsanat = [ "انتا ش عدّلت؟", "ما اتخسّر شي", "", "الحمد لله", "يرحمك الله", "آمين", "عسّك لا اتطيح", "مبروك", "يجازك الله خيرًا", "هون فيه حدّ؟", "مانلّا، اتفضّل", "انزيدلك؟", "كافيني" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["32-01"], ["32-02"], [], ["32-04"], ["32-05"], ["32-06"], ["32-07"], ["32-08"], ["32-09"], ["32-10"], ["32-11"], ["32-12"], ["32-13"] ];
+var vasaudiot = [ "32-01", "32-02", , "32-04", "32-05", "32-06", "32-07", "32-08", "32-09", "32-10", "32-11", "32-12", "32-13" ];
+var audiolkm = 12;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-31.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-33.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="rect" href="javascript:;" coords="83,14,123,29" onclick="tarkista('32-01')" />
+<area shape="rect" href="javascript:;" coords="136,14,177,38" onclick="tarkista('32-02')" />
+<area shape="rect" href="javascript:;" coords="385,85,409,101" onclick="tarkista('32-04')" />
+<area shape="rect" href="javascript:;" coords="445,98,474,124" onclick="tarkista('32-05')" />
+<area shape="rect" href="javascript:;" coords="421,138,455,161" onclick="tarkista('32-06')" />
+<area shape="rect" href="javascript:;" coords="87,227,135,253" onclick="tarkista('32-07')" />
+<area shape="rect" href="javascript:;" coords="311,232,369,265" onclick="tarkista('32-08')" />
+<area shape="rect" href="javascript:;" coords="372,270,410,291" onclick="tarkista('32-09')" />
+<area shape="rect" href="javascript:;" coords="49,436,101,463" onclick="tarkista('32-10')" />
+<area shape="rect" href="javascript:;" coords="164,459,208,484" onclick="tarkista('32-11')" />
+<area shape="rect" href="javascript:;" coords="289,451,335,484" onclick="tarkista('32-12')" />
+<area shape="rect" href="javascript:;" coords="389,456,437,489" onclick="tarkista('32-13')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-32.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>

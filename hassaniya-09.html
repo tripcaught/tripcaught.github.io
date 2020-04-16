@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 09</title>
+<script type="text/javascript">
+var kysymykset = [ ["aana?"], ["naħna?"], ["inta?"], ["inti?", "intiyya?"], ["huwwa?"], ["hiyya?"], ["intuuṃa?"], ["huuṃa?"] ];
+var altkysymykset = [ ["آنا؟"], ["نحنا؟"], ["انتا؟"], ["انتي؟", "انتيّ؟"], ["هو؟"], ["هي؟"], ["انتوما؟"], ["هوما؟"] ];
+var sanat = [ "aana", "naħna", "inta", "inti / intiyya", "huwwa", "hiyya", "intuuṃa", "huuṃa" ];
+var altsanat = [ "آنا", "نحنا", "انتا", "انتي / انتيّ", "هو", "هي", "انتوما", "هوما" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["09-01"], ["09-02"], ["09-03"], ["q-09-04-0", "q-09-04-1"], ["09-05"], ["09-06"], ["09-07"], ["09-08"] ];
+var vasaudiot = [ "09-01", "09-02", "09-03", "09-04", "09-05", "09-06", "09-07", "09-08" ];
+var audiolkm = 8;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-08.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-10.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="rect" href="javascript:;" coords="6,3,276,183" onclick="tarkista('09-01')" />
+<area shape="rect" href="javascript:;" coords="279,3,549,183" onclick="tarkista('09-02')" />
+<area shape="rect" href="javascript:;" coords="6,186,276,370" onclick="tarkista('09-03')" />
+<area shape="rect" href="javascript:;" coords="279,186,549,370" onclick="tarkista('09-04')" />
+<area shape="rect" href="javascript:;" coords="6,373,276,557" onclick="tarkista('09-05')" />
+<area shape="rect" href="javascript:;" coords="279,373,549,557" onclick="tarkista('09-06')" />
+<area shape="rect" href="javascript:;" coords="6,560,276,740" onclick="tarkista('09-07')" />
+<area shape="rect" href="javascript:;" coords="279,560,549,740" onclick="tarkista('09-08')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-09.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>

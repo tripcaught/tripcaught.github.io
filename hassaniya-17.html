@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 17</title>
+<script type="text/javascript">
+var kysymykset = [ ["buuya?", "waaldi?"], ["uṃṃi?", "waalidti?"], ["aana?"], ["uṃṃ ittirka?", "zawžti?", "muulaat xaymti?", "ʕyaali?"], ["nsiibi?"], ["nsiibti?"], ["wulli likbiir?", "ilbikr?", "wulli?"], ["wulli ssqiir?", "wulli ssɣiir?", "wulli?"], ["wulli lwusṭaani?", "wulli?"], ["minti likbiira?", "minti?"], ["minti ssqiira?", "minti ssɣiira?", "minti?"], ["minti lwusṭaaniyya?", "minti?"], ["lusṛa?"], ["ižžduud?"], ["ilwaaldayn?"], ["ittirka?"] ];
+var altkysymykset = [ ["بوي؟", "والدي؟"], ["امّي؟", "والدتي؟"], ["آنا؟"], ["امّ التركة؟", "زوجتي؟", "مولاة خيمتي؟", "اعيالي؟"], ["انسيبي؟"], ["انسيبتي؟"], ["ولّي لكبير؟", "البكر؟", "ولّي؟"], ["ولّي السقير؟", "ولّي السغير؟", "ولّي؟"], ["ولّي الوسطاني؟", "ولّي؟"], ["منتي لكبيرة؟", "منتي؟"], ["منتي السقيرة؟", "منتي السغيرة؟", "منتي؟"], ["منتي الوسطانيّة؟", "منتي؟"], ["لأسرة؟"], ["الجدود؟"], ["الوالدين؟"], ["التركة؟"] ];
+var sanat = [ "buuya / waaldi", "uṃṃi / waalidti", "aana", "uṃṃ ittirka / zawžti / muulaat xaymti / ʕyaali", "nsiibi", "nsiibti", "wulli likbiir / ilbikr / wulli", "wulli ssqiir / wulli ssɣiir / wulli", "wulli lwusṭaani / wulli", "minti likbiira / minti", "minti ssqiira / minti ssɣiira / minti", "minti lwusṭaaniyya / minti", "lusṛa", "ižžduud", "ilwaaldayn", "ittirka" ];
+var altsanat = [ "بوي / والدي", "امّي / والدتي", "آنا", "امّ التركة / زوجتي / مولاة خيمتي / اعيالي", "انسيبي", "انسيبتي", "ولّي لكبير / البكر / ولّي", "ولّي السقير / ولّي السغير / ولّي", "ولّي الوسطاني / ولّي", "منتي لكبيرة / منتي", "منتي السقيرة / منتي السغيرة / منتي", "منتي الوسطانيّة / منتي", "لأسرة", "الجدود", "الوالدين", "التركة" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["q-17-01-0", "q-17-01-1"], ["q-17-02-0", "q-17-02-1"], ["17-03"], ["q-17-04-0", "q-17-04-1", "q-17-04-2", "q-17-04-3"], ["17-05"], ["17-06"], ["q-17-07-0", "q-17-07-1", "q-17-07-2"], ["q-17-08-0", "q-17-08-1", "q-17-08-2"], ["q-17-09-0", "q-17-09-1"], ["q-17-10-0", "q-17-10-1"], ["q-17-11-0", "q-17-11-1", "q-17-11-2"], ["q-17-12-0", "q-17-12-1"], ["17-13"], ["17-14"], ["17-15"], ["17-16"] ];
+var vasaudiot = [ "17-01", "17-02", "17-03", "17-04", "17-05", "17-06", "17-07", "17-08", "17-09", "17-10", "17-11", "17-12", "17-13", "17-14", "17-15", "17-16" ];
+var audiolkm = 16;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-16.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-18.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="poly" href="javascript:;" coords="126,36,112,115,116,195,78,195,82,23,126,36" onclick="tarkista('17-01')" />
+<area shape="poly" href="javascript:;" coords="137,31,176,36,176,195,130,195,120,152,137,31" onclick="tarkista('17-02')" />
+<area shape="rect" href="javascript:;" coords="209,83,254,288" onclick="tarkista('17-03')" />
+<area shape="poly" href="javascript:;" coords="313,88,363,87,380,235,357,250,351,285,311,285,298,227,313,88" onclick="tarkista('17-04')" />
+<area shape="rect" href="javascript:;" coords="389,27,439,192" onclick="tarkista('17-05')" />
+<area shape="rect" href="javascript:;" coords="450,40,505,196" onclick="tarkista('17-06')" />
+<area shape="rect" href="javascript:;" coords="138,237,187,403" onclick="tarkista('17-07')" />
+<area shape="rect" href="javascript:;" coords="191,306,229,416" onclick="tarkista('17-08')" />
+<area shape="rect" href="javascript:;" coords="261,273,300,422" onclick="tarkista('17-09')" />
+<area shape="poly" href="javascript:;" coords="345,417,366,244,400,240,415,267,420,426,345,417" onclick="tarkista('17-10')" />
+<area shape="rect" href="javascript:;" coords="426,329,469,417" onclick="tarkista('17-11')" />
+<area shape="rect" href="javascript:;" coords="470,287,512,411" onclick="tarkista('17-12')" />
+<area shape="rect" href="javascript:;" coords="30,11,57,446" onclick="tarkista('17-13')" />
+<area shape="rect" href="javascript:;" coords="58,11,74,215" onclick="tarkista('17-14')" />
+<area shape="rect" href="javascript:;" coords="188,75,199,293" onclick="tarkista('17-15')" />
+<area shape="rect" href="javascript:;" coords="104,231,132,427" onclick="tarkista('17-16')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-17.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>
