@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 45</title>
+<script type="text/javascript">
+var kysymykset = [ ["ʕašṛa?"], ["ʕišriin?"], ["θlaaθiin?"], ["aṛbʕiin?"], ["xamsiin?"], ["sittiin?"], ["sabʕiin?"], ["θmaaniin?"], ["tisʕiin?"] ];
+var altkysymykset = [ ["عشرة؟"], ["عشرين؟"], ["اثلاثين؟"], ["اربعين؟"], ["خمسين؟"], ["ستّين؟"], ["سبعين؟"], ["اثمانين؟"], ["تسعين؟"] ];
+var sanat = [ "ʕašṛa", "ʕišriin", "θlaaθiin", "aṛbʕiin", "xamsiin", "sittiin", "sabʕiin", "θmaaniin", "tisʕiin" ];
+var altsanat = [ "عشرة", "عشرين", "اثلاثين", "اربعين", "خمسين", "ستّين", "سبعين", "اثمانين", "تسعين" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["45-01"], ["45-02"], ["45-03"], ["45-04"], ["45-05"], ["45-06"], ["45-07"], ["45-08"], ["45-09"] ];
+var vasaudiot = [ "45-01", "45-02", "45-03", "45-04", "45-05", "45-06", "45-07", "45-08", "45-09" ];
+var audiolkm = 9;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-44.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-46.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="rect" href="javascript:;" coords="6,10,184,193" onclick="tarkista('45-01')" />
+<area shape="rect" href="javascript:;" coords="187,10,364,193" onclick="tarkista('45-02')" />
+<area shape="rect" href="javascript:;" coords="367,10,545,193" onclick="tarkista('45-03')" />
+<area shape="rect" href="javascript:;" coords="6,196,184,379" onclick="tarkista('45-04')" />
+<area shape="rect" href="javascript:;" coords="187,196,364,379" onclick="tarkista('45-05')" />
+<area shape="rect" href="javascript:;" coords="367,196,545,379" onclick="tarkista('45-06')" />
+<area shape="rect" href="javascript:;" coords="6,382,184,565" onclick="tarkista('45-07')" />
+<area shape="rect" href="javascript:;" coords="187,382,364,565" onclick="tarkista('45-08')" />
+<area shape="rect" href="javascript:;" coords="367,382,545,565" onclick="tarkista('45-09')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-45.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>

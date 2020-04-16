@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 41</title>
+<script type="text/javascript">
+var kysymykset = [ ["ħriiθa?"], ["ʕaddaal iṛṛaala?"], ["xayyaaṭ?"], ["ħallaaq?"] ];
+var altkysymykset = [ ["احريثة؟"], ["عدّال الرالة؟"], ["خيّاط؟"], ["حلّاق؟"] ];
+var sanat = [ "ħriiθa", "ʕaddaal iṛṛaala", "xayyaaṭ", "ħallaaq" ];
+var altsanat = [ "احريثة", "عدّال الرالة", "خيّاط", "حلّاق" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["41-01"], ["41-02"], ["41-03"], ["41-04"] ];
+var vasaudiot = [ "41-01", "41-02", "41-03", "41-04" ];
+var audiolkm = 4;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-40.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-42.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="rect" href="javascript:;" coords="8,3,548,307" onclick="tarkista('41-01')" />
+<area shape="rect" href="javascript:;" coords="8,310,548,499" onclick="tarkista('41-02')" />
+<area shape="rect" href="javascript:;" coords="8,502,276,737" onclick="tarkista('41-03')" />
+<area shape="rect" href="javascript:;" coords="279,502,548,737" onclick="tarkista('41-04')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-41.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>

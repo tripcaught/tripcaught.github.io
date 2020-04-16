@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 10</title>
+<script type="text/javascript">
+var kysymykset = [ ["zqab?", "zɣab?"], ["hdib?", "ahdaab?"], ["uuðin?", "uðnayn?"], ["šdig?", "šduug?"], ["ħank?"], ["žibha?"], ["ħaažib?", "ħwaažib?"], ["ʕayn?", "ʕayniin?"], ["xnaavir?"], ["šaarib?", "šwaarib?"], ["sinn?", "sinnayn?"], ["lsaan?"], ["ṿumm?"], ["liħya?"], ["uužih?"] ];
+var altkysymykset = [ ["ازقب؟", "ازغب؟"], ["اهدب؟", "اهداب؟"], ["اوذن؟", "اذنين؟"], ["اشدڮ؟", "اشدوڮ؟"], ["حنك؟"], ["جبهة؟"], ["حاجب؟", "احواجب؟"], ["عين؟", "عينين؟"], ["اخنافر؟"], ["شارب؟", "اشوارب؟"], ["سنّ؟", "سنّين؟"], ["السان؟"], ["فمّ؟"], ["لحية؟"], ["اوجه؟"] ];
+var sanat = [ "zqab / zɣab", "hdib / ahdaab", "uuðin / uðnayn", "šdig / šduug", "ħank", "žibha", "ħaažib / ħwaažib", "ʕayn / ʕayniin", "xnaavir", "šaarib / šwaarib", "sinn / sinnayn", "lsaan", "ṿumm", "liħya", "uužih" ];
+var altsanat = [ "ازقب / ازغب", "اهدب / اهداب", "اوذن / اذنين", "اشدڮ / اشدوڮ", "حنك", "جبهة", "حاجب / احواجب", "عين / عينين", "اخنافر", "شارب / اشوارب", "سنّ / سنّين", "السان", "فمّ", "لحية", "اوجه" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["q-10-01-0", "q-10-01-1"], ["q-10-02-0", "q-10-02-1"], ["q-10-03-0", "q-10-03-1"], ["q-10-04-0", "q-10-04-1"], ["10-05"], ["10-06"], ["q-10-07-0", "q-10-07-1"], ["q-10-08-0", "q-10-08-1"], ["10-09"], ["q-10-10-0", "q-10-10-1"], ["q-10-11-0", "q-10-11-1"], ["10-12"], ["10-13"], ["10-14"], ["10-15"] ];
+var vasaudiot = [ "10-01", "10-02", "10-03", "10-04", "10-05", "10-06", "10-07", "10-08", "10-09", "10-10", "10-11", "10-12", "10-13", "10-14", "10-15" ];
+var audiolkm = 15;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-09.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-11.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="rect" href="javascript:;" coords="38,64,53,87" onclick="tarkista('10-01')" />
+<area shape="rect" href="javascript:;" coords="34,258,50,280" onclick="tarkista('10-02')" />
+<area shape="rect" href="javascript:;" coords="35,309,50,333" onclick="tarkista('10-03')" />
+<area shape="rect" href="javascript:;" coords="34,339,50,361" onclick="tarkista('10-04')" />
+<area shape="rect" href="javascript:;" coords="33,393,49,416" onclick="tarkista('10-05')" />
+<area shape="rect" href="javascript:;" coords="510,199,527,220" onclick="tarkista('10-06')" />
+<area shape="rect" href="javascript:;" coords="511,249,526,269" onclick="tarkista('10-07')" />
+<area shape="rect" href="javascript:;" coords="510,279,527,301" onclick="tarkista('10-08')" />
+<area shape="rect" href="javascript:;" coords="510,321,527,343" onclick="tarkista('10-09')" />
+<area shape="rect" href="javascript:;" coords="504,391,532,411" onclick="tarkista('10-10')" />
+<area shape="rect" href="javascript:;" coords="507,412,531,429" onclick="tarkista('10-11')" />
+<area shape="rect" href="javascript:;" coords="508,430,532,447" onclick="tarkista('10-12')" />
+<area shape="rect" href="javascript:;" coords="508,448,533,465" onclick="tarkista('10-13')" />
+<area shape="rect" href="javascript:;" coords="507,483,534,503" onclick="tarkista('10-14')" />
+<area shape="rect" href="javascript:;" coords="127,648,152,666" onclick="tarkista('10-15')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-10.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 13</title>
+<script type="text/javascript">
+var kysymykset = [ ["daaṛ?"], ["kuwwa?", "mirwayħa?"], ["ħayṭ?"], ["ṿumm?", "baab?"], ["ð̣aww?", "ampul?"], ["ṭaabla?"], ["migʕayda?"], ["matka?"], ["mraaya?"], ["zriiba?"], ["qubba?"] ];
+var altkysymykset = [ ["دار؟"], ["كوّة؟", "مرويحة؟"], ["حيط؟"], ["فمّ؟", "باب؟"], ["ظوّ؟", "امبول؟"], ["طابلة؟"], ["مڮعيدة؟"], ["متكى؟"], ["امراية؟"], ["ازريبة؟"], ["قبّة؟"] ];
+var sanat = [ "daaṛ", "kuwwa / mirwayħa", "ħayṭ", "ṿumm / baab", "ð̣aww / ampul", "ṭaabla", "migʕayda", "matka", "mraaya", "zriiba", "qubba" ];
+var altsanat = [ "دار", "كوّة / مرويحة", "حيط", "فمّ / باب", "ظوّ / امبول", "طابلة", "مڮعيدة", "متكى", "امراية", "ازريبة", "قبّة" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["13-01"], ["q-13-02-0", "q-13-02-1"], ["13-03"], ["q-13-04-0", "q-13-04-1"], ["q-13-05-0", "q-13-05-1"], ["13-06"], ["13-07"], ["13-08"], ["13-09"], ["13-10"], ["13-11"] ];
+var vasaudiot = [ "13-01", "13-02", "13-03", "13-04", "13-05", "13-06", "13-07", "13-08", "13-09", "13-10", "13-11" ];
+var audiolkm = 11;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-12.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-14.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="rect" href="javascript:;" coords="8,3,186,183" onclick="tarkista('13-01')" />
+<area shape="rect" href="javascript:;" coords="189,3,366,183" onclick="tarkista('13-02')" />
+<area shape="rect" href="javascript:;" coords="370,3,548,183" onclick="tarkista('13-03')" />
+<area shape="rect" href="javascript:;" coords="8,186,186,366" onclick="tarkista('13-04')" />
+<area shape="rect" href="javascript:;" coords="189,186,366,366" onclick="tarkista('13-05')" />
+<area shape="rect" href="javascript:;" coords="370,186,548,366" onclick="tarkista('13-06')" />
+<area shape="rect" href="javascript:;" coords="8,369,186,549" onclick="tarkista('13-07')" />
+<area shape="rect" href="javascript:;" coords="189,369,366,549" onclick="tarkista('13-08')" />
+<area shape="rect" href="javascript:;" coords="370,369,548,549" onclick="tarkista('13-09')" />
+<area shape="rect" href="javascript:;" coords="8,552,277,757" onclick="tarkista('13-10')" />
+<area shape="rect" href="javascript:;" coords="279,552,548,757" onclick="tarkista('13-11')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-13.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>

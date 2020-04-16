@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 21</title>
+<script type="text/javascript">
+var kysymykset = [ ["txaṛṛaṣ?"], ["yiṣṣannaṭ?"], ["yagṛa?"], ["yiktib?"], ["yaṛsam?"], ["iṣudd?"], ["yištaqlu?", "yištaɣlu?"], ["yalaʕbu?"], ["yamsaħ?"], ["tiṣgil ižžiir?", "tiṣgil ilgidħaan?"], ["tiqsil illbaas?", "tiɣsil illbaas?"], ["yissaħħam?"] ];
+var altkysymykset = [ ["اتخرّص؟"], ["يصّنّط؟"], ["يڮرا؟"], ["يكتب؟"], ["يرسم؟"], ["يصدّ؟"], ["يشتقلو؟", "يشتغلو؟"], ["يلعبو؟"], ["يمسح؟"], ["تصڮل الجير؟", "تصڮل الڮدحان؟"], ["تقسل اللباس؟", "تغسل اللباس؟"], ["يسّحّم؟"] ];
+var sanat = [ "txaṛṛaṣ", "yiṣṣannaṭ", "yagṛa", "yiktib", "yaṛsam", "iṣudd", "yištaqlu / yištaɣlu", "yalaʕbu", "yamsaħ", "tiṣgil ižžiir / tiṣgil ilgidħaan", "tiqsil illbaas / tiɣsil illbaas", "yissaħħam" ];
+var altsanat = [ "اتخرّص", "يصّنّط", "يڮرا", "يكتب", "يرسم", "يصدّ", "يشتقلو / يشتغلو", "يلعبو", "يمسح", "تصڮل الجير / تصڮل الڮدحان", "تقسل اللباس / تغسل اللباس", "يسّحّم" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["21-01"], ["21-02"], ["21-03"], ["21-04"], ["21-05"], ["21-06"], ["q-21-07-0", "q-21-07-1"], ["21-08"], ["21-09"], ["q-21-10-0", "q-21-10-1"], ["q-21-11-0", "q-21-11-1"], ["21-12"] ];
+var vasaudiot = [ "21-01", "21-02", "21-03", "21-04", "21-05", "21-06", "21-07", "21-08", "21-09", "21-10", "21-11", "21-12" ];
+var audiolkm = 12;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-20.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-22.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="rect" href="javascript:;" coords="8,3,186,183" onclick="tarkista('21-01')" />
+<area shape="rect" href="javascript:;" coords="189,3,366,183" onclick="tarkista('21-02')" />
+<area shape="rect" href="javascript:;" coords="370,3,548,183" onclick="tarkista('21-03')" />
+<area shape="rect" href="javascript:;" coords="8,186,186,368" onclick="tarkista('21-04')" />
+<area shape="rect" href="javascript:;" coords="189,186,366,366" onclick="tarkista('21-05')" />
+<area shape="rect" href="javascript:;" coords="370,186,548,366" onclick="tarkista('21-06')" />
+<area shape="rect" href="javascript:;" coords="8,369,186,549" onclick="tarkista('21-07')" />
+<area shape="rect" href="javascript:;" coords="189,369,366,549" onclick="tarkista('21-08')" />
+<area shape="rect" href="javascript:;" coords="370,369,548,549" onclick="tarkista('21-09')" />
+<area shape="rect" href="javascript:;" coords="8,552,186,749" onclick="tarkista('21-10')" />
+<area shape="rect" href="javascript:;" coords="189,552,366,749" onclick="tarkista('21-11')" />
+<area shape="rect" href="javascript:;" coords="370,552,548,749" onclick="tarkista('21-12')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-21.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>

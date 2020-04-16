@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8" />
+<style>
+.kysy { text-align: left; width: 210px}
+.altkysy { text-align: right; width: 210px; font-size:20px; font-family: DejaVu Sans, Noto Naskh Arabic, Lateef, Scheherazade}
+</style>
+<title>Hassaniya 03</title>
+<script type="text/javascript">
+var kysymykset = [ ["iṛṛaažil waagif?"], ["limṛa waagva?"], ["iṭṭfayl waagif?"], ["iṭṭfayla waagva?"], ["iiššiir waagif?"], ["iṛṛaažil gaaʕid?"], ["limṛa gaaʕda?"], ["iṭṭfayl gaaʕid?"], ["iṭṭfayla gaaʕda?"], ["iiššiir gaaʕid?"], ["iṛṛaažil yimši?"], ["limṛa timši?"], ["iṭṭfayl yimši?"], ["iṭṭfayla timši?"], ["iiššiir yimši?"], ["iṛṛaažil yižri?"], ["limṛa tižri?"], ["iṭṭfayl yižri?"], ["iṭṭfayla tižri?"], ["iiššiir yižri?"], ["iṛṛaažil taaki?"], ["limṛa taakya?"], ["iṭṭfayl taaki?"] ];
+var altkysymykset = [ ["الراجل واڮف؟"], ["لمرة واڮفة؟"], ["الطفيل واڮف؟"], ["الطفيلة واڮفة؟"], ["ايشّير واڮف؟"], ["الراجل ڮاعد؟"], ["لمرة ڮاعدة؟"], ["الطفيل ڮاعد؟"], ["الطفيلة ڮاعدة؟"], ["ايشّير ڮاعد؟"], ["الراجل يمشي؟"], ["لمرة تمشي؟"], ["الطفيل يمشي؟"], ["الطفيلة تمشي؟"], ["ايشّير يمشي؟"], ["الراجل يجري؟"], ["لمرة تجري؟"], ["الطفيل يجري؟"], ["الطفيلة تجري؟"], ["ايشّير يجري؟"], ["الراجل تاكي؟"], ["لمرة تاكية؟"], ["الطفيل تاكي؟"] ];
+var sanat = [ "iṛṛaažil waagif", "limṛa waagva", "iṭṭfayl waagif", "iṭṭfayla waagva", "iiššiir waagif", "iṛṛaažil gaaʕid", "limṛa gaaʕda", "iṭṭfayl gaaʕid", "iṭṭfayla gaaʕda", "iiššiir gaaʕid", "iṛṛaažil yimši", "limṛa timši", "iṭṭfayl yimši", "iṭṭfayla timši", "iiššiir yimši", "iṛṛaažil yižri", "limṛa tižri", "iṭṭfayl yižri", "iṭṭfayla tižri", "iiššiir yižri", "iṛṛaažil taaki", "limṛa taakya", "iṭṭfayl taaki" ];
+var altsanat = [ "الراجل واڮف", "لمرة واڮفة", "الطفيل واڮف", "الطفيلة واڮفة", "ايشّير واڮف", "الراجل ڮاعد", "لمرة ڮاعدة", "الطفيل ڮاعد", "الطفيلة ڮاعدة", "ايشّير ڮاعد", "الراجل يمشي", "لمرة تمشي", "الطفيل يمشي", "الطفيلة تمشي", "ايشّير يمشي", "الراجل يجري", "لمرة تجري", "الطفيل يجري", "الطفيلة تجري", "ايشّير يجري", "الراجل تاكي", "لمرة تاكية", "الطفيل تاكي" ];
+var correct = "ħagg"; var incorrect = "maahu ħagg";
+var altcorrect = "حڮ"; var altincorrect = "ماهو حڮ";
+var audiopath = "../audio/mey/mey-";
+var correctaudio = "correct";
+var incorrectaudio = "incorrect";
+var kysaudiot = [ ["03-01"], ["03-02"], ["03-03"], ["03-04"], ["03-05"], ["03-06"], ["03-07"], ["03-08"], ["03-09"], ["03-10"], ["03-11"], ["03-12"], ["03-13"], ["03-14"], ["03-15"], ["03-16"], ["03-17"], ["03-18"], ["03-19"], ["03-20"], ["03-21"], ["03-22"], ["03-23"] ];
+var vasaudiot = [ "03-01", "03-02", "03-03", "03-04", "03-05", "03-06", "03-07", "03-08", "03-09", "03-10", "03-11", "03-12", "03-13", "03-14", "03-15", "03-16", "03-17", "03-18", "03-19", "03-20", "03-21", "03-22", "03-23" ];
+var audiolkm = 23;
+var viestit = { noqaudio:"", ask:"Ask", noaudios:"This page has no recorded questions", learn:"Learn", noaudio:"This question has no audio" }</script>
+<script src="../kysely.js" type="text/javascript">
+</script>
+</head>
+
+<BODY>
+
+<div style="position:fixed; left:580px;"><a href="hassaniya-02.html">&lt;</a> <a href="hassaniya-index.html">^</a> <a href="hassaniya-04.html">&gt;</a><div style="margin-top: 15px"><button id="button-moodi" onClick="vaihdamoodi()"></button> <input type="checkbox" id="displaytext" checked="checked" onclick="hidetext()">Latin text <input type="checkbox" id="displayalttext" checked="checked" onclick="hidealttext()">Arabic text <input type="checkbox" id="displayaudio" checked="checked" onclick="hideaudio()">Audio <a style="text-decoration: none;" href="javascript:playagain()">🔊</a></div>
+<div class="kysy" id="kysymys" style="margin-top: 15px"></div><br>
+<div class="altkysy" id="altkysymys" dir="rtl"></div><br>
+<div class="kysy" id="vastaus"> </div><br>
+<div class="altkysy" id="altvastaus" dir="rtl"> </div>
+<div id="virhe"></div></div>
+
+<p>
+<map name="ristikko">
+<area shape="rect" href="javascript:;" coords="3,13,106,153" onclick="tarkista('03-01')" />
+<area shape="rect" href="javascript:;" coords="109,13,213,153" onclick="tarkista('03-02')" />
+<area shape="rect" href="javascript:;" coords="216,13,320,153" onclick="tarkista('03-03')" />
+<area shape="rect" href="javascript:;" coords="323,13,427,153" onclick="tarkista('03-04')" />
+<area shape="rect" href="javascript:;" coords="430,13,534,153" onclick="tarkista('03-05')" />
+<area shape="rect" href="javascript:;" coords="3,156,106,292" onclick="tarkista('03-06')" />
+<area shape="rect" href="javascript:;" coords="109,156,213,292" onclick="tarkista('03-07')" />
+<area shape="rect" href="javascript:;" coords="216,156,320,292" onclick="tarkista('03-08')" />
+<area shape="rect" href="javascript:;" coords="323,156,427,292" onclick="tarkista('03-09')" />
+<area shape="rect" href="javascript:;" coords="430,156,534,292" onclick="tarkista('03-10')" />
+<area shape="rect" href="javascript:;" coords="3,295,106,436" onclick="tarkista('03-11')" />
+<area shape="rect" href="javascript:;" coords="109,295,213,436" onclick="tarkista('03-12')" />
+<area shape="rect" href="javascript:;" coords="216,295,320,436" onclick="tarkista('03-13')" />
+<area shape="rect" href="javascript:;" coords="323,295,427,436" onclick="tarkista('03-14')" />
+<area shape="rect" href="javascript:;" coords="430,295,534,436" onclick="tarkista('03-15')" />
+<area shape="rect" href="javascript:;" coords="3,439,106,580" onclick="tarkista('03-16')" />
+<area shape="rect" href="javascript:;" coords="109,439,213,580" onclick="tarkista('03-17')" />
+<area shape="rect" href="javascript:;" coords="216,439,320,580" onclick="tarkista('03-18')" />
+<area shape="rect" href="javascript:;" coords="323,439,427,580" onclick="tarkista('03-19')" />
+<area shape="rect" href="javascript:;" coords="430,439,534,580" onclick="tarkista('03-20')" />
+<area shape="rect" href="javascript:;" coords="3,583,177,662" onclick="tarkista('03-21')" />
+<area shape="rect" href="javascript:;" coords="180,583,355,662" onclick="tarkista('03-22')" />
+<area shape="rect" href="javascript:;" coords="358,583,534,662" onclick="tarkista('03-23')" />
+</map>
+<img usemap="#ristikko" src="../pictures/clickable-03.jpg" onload = "alusta()"/>
+</p>
+
+
+</BODY>
+</HTML>
